@@ -1,37 +1,34 @@
 CodeBERT Pre-training Project
-This project is aimed at pre-training a CodeBERT model to generate and complete code snippets for a specific programming language. The CodeBERT model is a powerful language model that can be fine-tuned on specific tasks related to software engineering, such as code generation and code completion.
-
-Requirements
-To run this project, you will need a machine with Ubuntu installed, at least 10GB of RAM and 8 virtual processors. You will also need Python 3 and the following Python libraries: transformers, pandas, and beautifulsoup4.
-
+This project focuses on pre-training a CodeBERT model for generating and completing code snippets in a specific programming language. CodeBERT is a versatile language model that can be fine-tuned for various software engineering tasks such as code generation and code completion.
+Key Features
+•	Pre-train CodeBERT on custom datasets
+•	Scrape code snippets from websites
+•	Optimize memory usage during training with gradient accumulation or small batch sizes
+•	Utilize the fine-tuned model for code generation and completion tasks
+My Machine Used
+•	Ubuntu-based machine
+•	At least 10GB of RAM
+•	8 virtual processors
+•	Python 3
+•	Python libraries: transformers, pandas, beautifulsoup4
 Dataset
-The project includes a small dataset of code snippets to be used for pre-training. The dataset can be found in the smalldataset.py file. Additionally, a larger dataset can be obtained from sources such as GitHub Python Code Snippets, Java Code Snippets, Python Code Snippets, and C++ Code Snippets.
-
-CodeBERT Pre-Training
-The pre-training process involves fine-tuning the CodeBERT model on the selected dataset. The codebertmodel.py file contains the model configuration and the training script, while train_with_gradient_accumulation.py and train_with_small_batch_size.py provide different training options for optimizing memory usage.
-
+•	Small dataset of code snippets for pre-training is included in smalldataset.py
+•	Obtain larger datasets from sources such as GitHub Python Code Snippets, Java Code Snippets, Python Code Snippets, and C++ Code Snippets
+Pre-training CodeBERT
+1.	Fine-tune the CodeBERT model on the selected dataset
+2.	Model configuration and training script can be found in codebertmodel.py
+3.	Choose between train_with_gradient_accumulation.py and train_with_small_batch_size.py for optimizing memory usage during training
 Website Scraping
-To obtain a dataset of code snippets related to a specific programming language, the project includes a script called websiterip.py, which uses the BeautifulSoup library to scrape code snippets from a website. The script can be easily modified to scrape code from other websites.
-
+•	Use websiterip.py to scrape code snippets related to a specific programming language
+•	Modify the script to target other websites as needed
 Results
-Once the pre-training process is completed, the fine-tuned CodeBERT model can be used for various software engineering tasks, such as code generation and code completion.
+•	Use the fine-tuned CodeBERT model for various software engineering tasks, such as code generation and code completion
+Extra Info
+•	codebertmodel.py: Python script defining the CodeBERT model
+•	README.md: Markdown file containing project information and documentation
+•	smalldataset.py: Python script defining a small dataset for training or evaluation
+•	websiterip.py: Python script for downloading and extracting code blocks from websites
+•	train_with_small_batch_size.py: Python script for training with a small batch size to reduce memory usage
+•	train_with_gradient_accumulation.py: Python script for training with gradient accumulation to improve stability
+Note: The train_data folder has been added, but the data inside requires preprocessing before use.
 
-
-
-Extra info
-
-codebertmodel.py: This is likely a Python script that defines a CodeBERT model for code generation or other natural language processing tasks.
-
-README.md: This is a Markdown file that typically contains instructions, documentation, or other information about the project or codebase.
-
-smalldataset.py: This is likely a Python script that defines a small dataset for training or evaluation of a machine learning model.
-
-websiterip.py: This is likely a Python script that downloads and extracts code blocks from a website, using tools such as BeautifulSoup or Extractor.
-
-train_with_small_batch_size.py: This is likely a Python script that trains a machine learning model with a small batch size, which can be useful for reducing memory usage during training.
-
-train_with_gradient_accumulation.py: This is likely a Python script that trains a machine learning model with gradient accumulation, which can be useful for simulating larger batch sizes and improving training stability.
-
-
-
-added train Data folder but all data inside is not ready and needs preprocessing 
