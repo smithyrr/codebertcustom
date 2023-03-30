@@ -103,7 +103,12 @@ Print the code example and the corresponding generated description.
 
 Write the updated commands_data list to a new JSON file called "arma3_commands_with_descriptions.json".
 
+##################################################################################################################################################################
 
+
+
+
+this project is not complete and a work in progress!!
 
 
 
