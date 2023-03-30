@@ -73,3 +73,36 @@ Extra Info
 
 Note: The train_data folder has been added, but the data inside requires preprocessing before use.
 
+generate_description.py script summery
+
+Import the necessary libraries, which include the GPT-2 tokenizer and model from the Hugging Face Transformers library, as well as JSON and PyTorch.
+
+Load the pretrained GPT-2 tokenizer and model.
+
+Define a function called generate_description that takes a code example as input and returns a generated description. The function:
+
+a. Prepares an input text by adding a prompt to describe the given Arma 3 code.
+
+b. Tokenizes the input text and creates an attention mask (a tensor of ones with the same shape as the input_ids tensor).
+
+c. Generates a description using the GPT-2 model, taking into account the input_ids and attention_mask tensors.
+
+d. Decodes the generated output and returns the description as a string.
+
+Read the "arma3_commands.json" file and load its content into a variable called commands_data.
+
+Iterate through the commands_data list, and for each command with the description "No description available," use the generate_description function to generate a new description based on the command's example code. The generated description replaces the existing description in the command dictionary.
+
+Print the code example and the corresponding generated description.
+
+Write the updated commands_data list to a new JSON file called "arma3_commands_with_descriptions.json".
+
+
+
+
+
+
+
+
+
+
