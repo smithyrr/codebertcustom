@@ -1,13 +1,16 @@
-CodeBERT Pre-training Project
-This project aims to pre-train a CodeBERT model for generating and completing code snippets in a specific programming language. CodeBERT is a versatile language model that can be fine-tuned for various software engineering tasks such as code generation and code completion.
+CodeBERT Pre-training Project(building of CodeBert Model)
+
+This project aims to pre-train a CodeBERT model for generating and completing code snippets in a specific programming language. 
+
+CodeBERT is a versatile language model that can be fine-tuned for various software engineering tasks such as code generation and code completion.
 
 Key Features
+
 Pre-train CodeBERT on custom datasets
 Scrape code snippets from websites
 Optimize memory usage during training with gradient accumulation or small batch sizes
 Utilize the fine-tuned model for code generation and completion tasks
 Requirements
-Ubuntu-based machine with at least 10GB of RAM and 8 virtual processors
 Python 3
 Required Python libraries: transformers, pandas, and beautifulsoup4
 Dataset
@@ -24,11 +27,17 @@ Use the fine-tuned CodeBERT model for various software engineering tasks, such a
 
 Extra Information
 codebertmodel.py: Python script defining the CodeBERT model
+
 README.md: Markdown file containing project information and documentation
+
 smalldataset.py: Python script defining a small dataset for training or evaluation
+
 websiterip.py: Python script for downloading and extracting code blocks from websites
+
 train_with_small_batch_size.py: Python script for training with a small batch size to reduce memory usage
+
 train_with_gradient_accumulation.py: Python script for training with gradient accumulation to improve stability
+
 Note: The train_data folder has been added, but the data inside requires preprocessing before use.
 
 generate_description.py Script Summary
