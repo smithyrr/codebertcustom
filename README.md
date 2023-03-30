@@ -1,5 +1,5 @@
-CodeBERT Am3 Pre-training Project:
-(MLP) 
+CodeBERT Pre-training Project:
+
 Aims to pre-train a CodeBERT model for generating and completing code snippets in a specific programming language.
 CodeBERT is a versatile language model that can be fine-tuned for various software engineering tasks such as code generation and code completion.
 Key Features:
