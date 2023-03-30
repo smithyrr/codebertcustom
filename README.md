@@ -73,7 +73,13 @@ Extra Info
 
 Note: The train_data folder has been added, but the data inside requires preprocessing before use.
 
+##########################################################################################################################################################
 generate_description.py script summery
+##########################################################################################################################################################
+
+
+
+
 
 Import the necessary libraries, which include the GPT-2 tokenizer and model from the Hugging Face Transformers library, as well as JSON and PyTorch.
 
