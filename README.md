@@ -77,10 +77,6 @@ Note: The train_data folder has been added, but the data inside requires preproc
 generate_description.py script summery
 ##########################################################################################################################################################
 
-
-
-
-
 Import the necessary libraries, which include the GPT-2 tokenizer and model from the Hugging Face Transformers library, as well as JSON and PyTorch.
 
 Load the pretrained GPT-2 tokenizer and model.
@@ -103,8 +99,21 @@ Print the code example and the corresponding generated description.
 
 Write the updated commands_data list to a new JSON file called "arma3_commands_with_descriptions.json".
 
+###############################
 
+restructurecode.py script summery
 
+The script provided above does the following:
+
+It reads the contents of the arma3_commands_by_functionality.json file.
+
+It removes the leading and trailing commas from the content.
+
+It wraps the content in square brackets ([...]) to make it a valid JSON array.
+
+It parses the formatted content as a JSON object.
+
+It saves the formatted content to a new JSON file named formatted_arma3_commands_by_functionality.json with proper indentation.
 
 
 
