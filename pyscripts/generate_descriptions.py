@@ -1,4 +1,5 @@
 import json
+import os
 import torch
 from transformers import GPT2Tokenizer, GPT2LMHeadModel
 
@@ -18,7 +19,11 @@ def generate_description(code_example):
     description = tokenizer.decode(output[0], skip_special_tokens=True)
     return description
 
-with open("arma3_commands.json", "r") as file:
+base_path = os.path.dirname(os.path.abspath(__file__))
+input_file = os.path.join(base_path, "../formatted_arma3_commands_by_functionality.json")
+output_file = os.path.join(base_path, "../arma3_commands_with_descriptions.json")
+
+with open(input_file, "r") as file:
     commands_data = json.load(file)
 
 for command in commands_data:
@@ -27,5 +32,5 @@ for command in commands_data:
         command["description"] = generated_description
         print(f"Code example: {command['example']}\nGenerated description: {generated_description}\n")
 
-with open("arma3_commands_with_descriptions.json", "w") as file:
+with open(output_file, "w") as file:
     json.dump(commands_data, file, indent=4)
