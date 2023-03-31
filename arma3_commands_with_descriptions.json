@@ -1,4 +1,3 @@
-[
     [
         {
             "name": "behaviour",
@@ -13541,4 +13540,4 @@
             "example": "_wsPlayer=weaponStateplayer;//\u00a0[\"arifle_MXC_ACO_F\",\"arifle_MXC_ACO_F\",\"Single\",\"30Rnd_65x39_caseless_mag\",30,0,0]"
         }
     ]
-]
+

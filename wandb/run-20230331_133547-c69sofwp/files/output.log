@@ -1,0 +1,43 @@
+Downloading (…)okenizer_config.json: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 25.0/25.0 [00:00<00:00, 8.94kB/s]
+Downloading (…)lve/main/config.json: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 498/498 [00:00<00:00, 199kB/s]
+Downloading (…)olve/main/vocab.json: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 899k/899k [00:00<00:00, 1.95MB/s]
+Downloading (…)olve/main/merges.txt: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 456k/456k [00:00<00:00, 1.24MB/s]
+Downloading (…)cial_tokens_map.json: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 150/150 [00:00<00:00, 46.7kB/s]
+Traceback (most recent call last):
+  File "/home/cognitron/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 717, in convert_to_tensors
+    tensor = as_tensor(value)
+ValueError: expected sequence of length 512 at dim 1 (got 926)
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "/home/cognitron/codebert/trainarma1.py", line 21, in <module>
+    tokenized_code = tokenizer.batch_encode_plus(
+  File "/home/cognitron/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 2800, in batch_encode_plus
+    return self._batch_encode_plus(
+  File "/home/cognitron/.local/lib/python3.10/site-packages/transformers/models/roberta/tokenization_roberta_fast.py", line 263, in _batch_encode_plus
+    return super()._batch_encode_plus(*args, **kwargs)
+  File "/home/cognitron/.local/lib/python3.10/site-packages/transformers/tokenization_utils_fast.py", line 477, in _batch_encode_plus
+    return BatchEncoding(sanitized_tokens, sanitized_encodings, tensor_type=return_tensors)
+  File "/home/cognitron/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 210, in __init__
+    self.convert_to_tensors(tensor_type=tensor_type, prepend_batch_axis=prepend_batch_axis)
+  File "/home/cognitron/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 733, in convert_to_tensors
+    raise ValueError(
+ValueError: Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`input_ids` in this case) have excessive nesting (inputs type `list` where type `int` is expected).
+Traceback (most recent call last):
+  File "/home/cognitron/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 717, in convert_to_tensors
+    tensor = as_tensor(value)
+ValueError: expected sequence of length 512 at dim 1 (got 926)
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "/home/cognitron/codebert/trainarma1.py", line 21, in <module>
+    tokenized_code = tokenizer.batch_encode_plus(
+  File "/home/cognitron/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 2800, in batch_encode_plus
+    return self._batch_encode_plus(
+  File "/home/cognitron/.local/lib/python3.10/site-packages/transformers/models/roberta/tokenization_roberta_fast.py", line 263, in _batch_encode_plus
+    return super()._batch_encode_plus(*args, **kwargs)
+  File "/home/cognitron/.local/lib/python3.10/site-packages/transformers/tokenization_utils_fast.py", line 477, in _batch_encode_plus
+    return BatchEncoding(sanitized_tokens, sanitized_encodings, tensor_type=return_tensors)
+  File "/home/cognitron/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 210, in __init__
+    self.convert_to_tensors(tensor_type=tensor_type, prepend_batch_axis=prepend_batch_axis)
+  File "/home/cognitron/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 733, in convert_to_tensors
+    raise ValueError(
+ValueError: Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`input_ids` in this case) have excessive nesting (inputs type `list` where type `int` is expected).
