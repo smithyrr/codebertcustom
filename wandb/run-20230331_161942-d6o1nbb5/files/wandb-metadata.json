@@ -1,0 +1,77 @@
+{
+    "os": "Linux-5.15.0-67-generic-x86_64-with-glibc2.35",
+    "python": "3.10.6",
+    "heartbeatAt": "2023-03-31T16:19:44.042010",
+    "startedAt": "2023-03-31T16:19:42.716049",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/cognitron/codebertcustom/trainarma1.py",
+    "codePath": "trainarma1.py",
+    "git": {
+        "remote": "https://github.com/smithyrr/codebertcustom.git",
+        "commit": "cfa632f6d1763de3678d5eea17dad086b4965de8"
+    },
+    "email": "smithyyr@gmail.com",
+    "root": "/home/cognitron/codebertcustom",
+    "host": "cognitron",
+    "username": "cognitron",
+    "executable": "/usr/bin/python3",
+    "cpu_count": 8,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 2132.725,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2132.725,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2132.725,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2132.725,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2132.725,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2132.725,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2132.725,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2132.725,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2132.725,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "total": 488.5780792236328,
+        "used": 136.6009178161621
+    },
+    "memory": {
+        "total": 9.447628021240234
+    }
+}
