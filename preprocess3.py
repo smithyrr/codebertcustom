@@ -26,7 +26,7 @@ for item in data:
 
 # Replace these paths with the desired paths to save your text files
 descriptions_file_path = "/home/cognitron/codebertcustom/arma3/data/ready/descriptions.txt"
-code_names_file_path = "/home/cognitron/codebertcustom/arma3data/ready/code_names.txt"
+code_names_file_path = "/home/cognitron/codebertcustom/arma3/data/ready/code_names.txt"
 
 save_to_file(descriptions, descriptions_file_path)
 save_to_file(code_names, code_names_file_path)
