@@ -7,18 +7,14 @@ from transformers import (
     Trainer,
     TrainingArguments,
 )
-import wandb
-
-# Initialize a W&B run
-wandb.init(project="arma3_codebert", name="training_run")
 
 # Load the tokenizer and the model
 tokenizer = AutoTokenizer.from_pretrained("microsoft/codebert-base")
 model = AutoModelForMaskedLM.from_pretrained("microsoft/codebert-base")
 
 # Load your custom dataset
-code_names_file = "/codebertcustom/arma3/data/ready/code_names.txt"
-descriptions_file = "/codebertcustom/arma3/data/ready/descriptions.txt"
+code_names_file = "/home/cognitron/codebertcustom/arma3/data/ready/code_names.txt"
+descriptions_file = "/home/cognitron/codebertcustom/arma3/data/ready/descriptions.txt"
 
 with open(code_names_file, "r") as f:
     code_names = f.readlines()
@@ -78,25 +74,13 @@ data_collator = DataCollatorForLanguageModeling(
 )
 
 # Create a Trainer
+# Create a Trainer
 trainer = Trainer(
     model=model,
     args=training_args,
     train_dataset=dataset,
-    data_collator=data_collator,
-    callbacks=[
-        wandb.tensorboard.WandbCallback(log_model=True, log_preds=True),
-        wandb.Callback(log="all")
-    ]
+    data_collator=data_collator
 )
 
 # Train the model
 trainer.train()
-
-# Log hyperparameters
-wandb.config.update(training_args)
-
-# Send alert notification when training completes
-wandb.alert(title="Training Complete", text="Your model training has completed!", level=wandb.AlertLevel.SUCCESS)
-
-# Log custom metadata
-wandb.log({"dataset_size": len(dataset), "batch_size": training_args.per_device_train_batch_size})

@@ -1,0 +1,105 @@
+  0%|                                                                                          | 0/4062 [00:00<?, ?it/s]The following columns in the training set don't have a corresponding argument in `RobertaForMaskedLM.forward` and have been ignored: labels_attention_mask. If labels_attention_mask are not expected by `RobertaForMaskedLM.forward`,  you can safely ignore this message.
+You're using a RobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  2%|█▍                                                                             | 76/4062 [03:42<2:36:49,  2.36s/it]Traceback (most recent call last):
+  File "/home/cognitron/codebertcustom/trainarma1.py", line 86, in <module>
+    trainer.train()
+  File "/home/cognitron/.local/lib/python3.10/site-packages/transformers/trainer.py", line 1543, in train
+    return inner_training_loop(
+  File "/home/cognitron/.local/lib/python3.10/site-packages/transformers/trainer.py", line 1858, in _inner_training_loop
+    self.optimizer.step()
+  File "/home/cognitron/.local/lib/python3.10/site-packages/torch/optim/lr_scheduler.py", line 68, in wrapper
+    return wrapped(*args, **kwargs)
+  File "/home/cognitron/.local/lib/python3.10/site-packages/torch/optim/optimizer.py", line 140, in wrapper
+    out = func(*args, **kwargs)
+  File "/home/cognitron/.local/lib/python3.10/site-packages/transformers/optimization.py", line 360, in step
+    exp_avg.mul_(beta1).add_(grad, alpha=(1.0 - beta1))
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/cognitron/codebertcustom/trainarma1.py", line 86, in <module>
+    trainer.train()
+  File "/home/cognitron/.local/lib/python3.10/site-packages/transformers/trainer.py", line 1543, in train
+    return inner_training_loop(
+  File "/home/cognitron/.local/lib/python3.10/site-packages/transformers/trainer.py", line 1858, in _inner_training_loop
+    self.optimizer.step()
+  File "/home/cognitron/.local/lib/python3.10/site-packages/torch/optim/lr_scheduler.py", line 68, in wrapper
+    return wrapped(*args, **kwargs)
+  File "/home/cognitron/.local/lib/python3.10/site-packages/torch/optim/optimizer.py", line 140, in wrapper
+    out = func(*args, **kwargs)
+  File "/home/cognitron/.local/lib/python3.10/site-packages/transformers/optimization.py", line 360, in step
+    exp_avg.mul_(beta1).add_(grad, alpha=(1.0 - beta1))
+KeyboardInterrupt

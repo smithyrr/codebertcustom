@@ -1,0 +1,14 @@
+Some weights of RobertaForMaskedLM were not initialized from the model checkpoint at microsoft/codebert-base and are newly initialized: ['lm_head.layer_norm.weight', 'lm_head.dense.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.weight', 'lm_head.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Traceback (most recent call last):
+  File "/home/cognitron/codebertcustom/trainarma1.py", line 87, in <module>
+    wandb.tensorboard.WandbCallback(log_model=True, log_preds=True),
+  File "/home/cognitron/.local/lib/python3.10/site-packages/wandb/sdk/lib/lazyloader.py", line 59, in __getattr__
+    return getattr(module, item)
+AttributeError: module 'wandb.integration.tensorboard' has no attribute 'WandbCallback'
+Traceback (most recent call last):
+  File "/home/cognitron/codebertcustom/trainarma1.py", line 87, in <module>
+    wandb.tensorboard.WandbCallback(log_model=True, log_preds=True),
+  File "/home/cognitron/.local/lib/python3.10/site-packages/wandb/sdk/lib/lazyloader.py", line 59, in __getattr__
+    return getattr(module, item)
+AttributeError: module 'wandb.integration.tensorboard' has no attribute 'WandbCallback'
