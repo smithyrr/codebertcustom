@@ -1,4 +1,6 @@
 import torch
+import os
+from torch.optim.lr_scheduler import ReduceLROnPlateau
 from torch.utils.data import DataLoader
 from transformers import (
     AutoTokenizer,
@@ -58,7 +60,7 @@ data_loader = DataLoader(dataset, batch_size=2, shuffle=True)
 
 # Set training arguments
 training_args = TrainingArguments(
-    output_dir="./results",
+    output_dir="/home/cognitron/codebertcustom/endmachine",
     overwrite_output_dir=True,
     num_train_epochs=3,
     per_device_train_batch_size=2,
@@ -74,13 +76,34 @@ data_collator = DataCollatorForLanguageModeling(
 )
 
 # Create a Trainer
-# Create a Trainer
 trainer = Trainer(
     model=model,
     args=training_args,
     train_dataset=dataset,
-    data_collator=data_collator
+    data_collator=data_collator,
 )
 
 # Train the model
 trainer.train()
+
+# Create the learning rate scheduler
+optimizer = torch.optim.Adam(model.parameters(), lr=1e-5)
+scheduler = ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=5, verbose=True)
+
+# Update the Trainer to use the learning rate scheduler
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    train_dataset=dataset,
+    data_collator=data_collator,
+    optimizers=(optimizer, scheduler),
+)
+
+# Train the model with the scheduler
+trainer.train()
+
+
+# Save the trained model in the specified directory
+if not os.path.exists("/home/cognitron/codebertcustom/endmachine"):
+    os.makedirs("/home/cognitron/codebertcustom/endmachine")
+trainer.save_model("/home/cognitron/codebertcustom/endmachine")
