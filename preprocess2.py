@@ -1,16 +1,9 @@
 import json
 
-data = json.load(open("arma3_commands_with_descriptions.json"))
+with open('/home/cognitron/codebert/arma3_commands_with_descriptions.json', 'r') as f:
+    data = json.load(f)
 
-with open("formatted_arma3_commands_with_descriptions.json", "w") as f:
-    for item in data:
-        for snippet in item["snippets"]:
-            f.write(json.dumps({
-                "code_snippet": snippet["code"],
-                "language": "Arma 3",
-                "metadata": {
-                    "name": item["name"],
-                    "description": item["description"],
-                    "example": snippet["example"]
-                }
-            }) + "\n")
+with open('/home/cognitron/codebert/formatted_data.txt', 'w') as f:
+    for d in data:
+        example = d['example'].replace('\n', '')
+        f.write(f"{d['name']}\n{d['description']}\nExample: {example}\n\n")
